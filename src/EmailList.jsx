@@ -1,4 +1,5 @@
 import React from 'react'
+import EmailRow from './EmailRow'
 
 // import CheckBox from '@material-ui/icons/CheckBox';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -47,12 +48,21 @@ function EmailList() {
                     </IconButton>
                 </div>    
            </div>
-           <div className='emaillist__sections'>
+                 <div className='emaillist__sections'>
                     <Section Icon={InboxIcon} title='primary' color='red' selected={true}/>
                     <Section Icon={PeopleIcon} title='Social' color='#137e80' selected={false}/>
                     <Section Icon={LocalOfferIcon} title='promotion' color='green' selected={false}/>
 
                 </div>
+                <div className='emaillist__list'>
+                    <EmailRow
+                        title='twich'
+                        subject='hey'
+                        desc='this is great'
+                        time='10am'
+                    />
+                </div>
+
         </div>
     )
 }

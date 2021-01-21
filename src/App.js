@@ -18,10 +18,10 @@ function App() {
 
       <div className='app__body'>
       <SideBar/>
-      <Route path='/mail'>
+      <Route exact path='/mail'>
         <Mail/>
       </Route>
-      <Route path='/'>
+      <Route exact path='/'>
         <EmailList/>
       </Route>
       </div>
