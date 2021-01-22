@@ -19,11 +19,15 @@ import { IconButton} from '@material-ui/core';
 
 
 import './SideBar.css'
+import { openSendMessage } from './features/mailSlice';
+import { useDispatch } from 'react-redux';
 
 function SideBar() {
+    const  dispatch = useDispatch()
+
     return (
         <div className='sidebar'>
-            <Button startIcon={<AddIcon fontSize='Large' />  } className='sidebar__compose'>Compose</Button>
+            <Button onClick={()=>dispatch(openSendMessage())} startIcon={<AddIcon fontSize='Large' />  } className='sidebar__compose'>Compose</Button>
             <SideBarOption Icon={InboxIcon} title='inbox'  number={54}  selected={true}/>
             <SideBarOption Icon={StarIcon} title='starred'  number={54}/>
             <SideBarOption Icon={LabelImportantIcon} title='important'  number={54}/>
