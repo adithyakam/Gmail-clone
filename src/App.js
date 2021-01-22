@@ -7,6 +7,7 @@ import Mail from './Mail'
 import {  BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom' 
 
 import './App.css';
+import SendMail from './SendMail';
 
 
 
@@ -18,13 +19,16 @@ function App() {
 
       <div className='app__body'>
       <SideBar/>
+      <switch>
       <Route exact path='/mail'>
         <Mail/>
       </Route>
       <Route exact path='/'>
         <EmailList/>
       </Route>
+      </switch>
       </div>
+      <SendMail/>
       </div>
     </Router>
   );
