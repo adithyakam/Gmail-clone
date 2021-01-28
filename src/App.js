@@ -15,7 +15,7 @@ import SendMail from './SendMail';
 
 function App() {
 
-    const openSendMessage =useSelector(selectopenSendMessage)
+    const opnSendMessage =useSelector(selectopenSendMessage)
 
   return (
     <Router>
@@ -24,16 +24,16 @@ function App() {
 
       <div className='app__body'>
       <SideBar/>
-      <switch>
+      <Switch>
       <Route exact path='/mail'>
         <Mail/>
       </Route>
       <Route exact path='/'>
         <EmailList/>
       </Route>
-      </switch>
+      </Switch>
       </div>
-      {openSendMessage && <SendMail/>}
+      {opnSendMessage && <SendMail/>}
       </div>
     </Router>
   );

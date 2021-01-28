@@ -5,14 +5,30 @@
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from '@material-ui/core'
 
+import {useDispatch} from 'react-redux'
+
 import  './SendMail.css'
+import { closeSendMessage } from './features/mailSlice';
+import { db } from './firebase';
+
+import firebase from 'firebase';
 
 
 function SendMail() {
+    const  dispatch = useDispatch();
+
     const {register,handleSubmit,watch,errors} =useForm();
 
     const onSubmit=(formdata)=>{
-        
+        db.collection('emails').add(
+            {
+                to:formdata.to,
+                subject:formdata.subject,
+                message:formdata.message,
+                timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+            }
+        )
+       dispatch(closeSendMessage()); 
     }
 
 
@@ -20,7 +36,7 @@ function SendMail() {
         <div  className='sendmail' >
             <div className='sendMail__header'>
                 <h3>message</h3>
-                <CloseIcon className='sendMail__close'/>
+                <CloseIcon onClick={()=>dispatch(closeSendMessage())} className='sendMail__close'/>
 
             </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -41,7 +57,7 @@ function SendMail() {
                         </Button>
                     </div>
                 </form>
-        </div>
+        </div> 
 
     )
 }

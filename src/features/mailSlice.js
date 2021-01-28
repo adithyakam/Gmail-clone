@@ -18,12 +18,7 @@ export const mailSlice = createSlice({
 
 export const { openSendMessage, closeSendMessage } =mailSlice.actions;
 
-// export const incrementAsync = amount => dispatch => {
-//   setTimeout(() => {
-//     dispatch(incrementByAmount(amount));
-//   }, 1000);
-// };
-export const selectopenSendMessage = state => state.mail.openSendMessage;
+export const selectopenSendMessage = state => state.mail.sendMessageToOpen;
 // export const selectcloseSendMessage = state => state.mail.closeSendMessage;
 
 
