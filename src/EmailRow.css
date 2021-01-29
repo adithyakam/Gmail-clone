@@ -33,9 +33,8 @@
 }
 
 .emailrow-title {
-  font-size: 15px;
-  font-weight: bold;
-  padding-right: 15px;
+  font-size: 13px;
+  flex: 0.3;
 }
 
 .emailrow-time {

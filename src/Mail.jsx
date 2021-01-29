@@ -18,9 +18,13 @@ import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 import {useHistory} from 'react-router-dom';
 
 import './Mail.css'
+import { useSelector } from 'react-redux';
+import { selectOpenMail } from './features/mailSlice';
 
 function Mail() {
 const history =useHistory();
+
+    const selectedMail= useSelector(selectOpenMail)
 
     return (
         <div className='mail'>
@@ -65,13 +69,13 @@ const history =useHistory();
             </div>
             <div className='main__body'>
             <div className='mail__bodyHeader'>
-                <h2>Test-sb</h2>
+                <h2>{selectedMail?.subject}</h2>
                 <LabelImportantIcon className='mail__imp'/>
-                <p>title</p>
-                <p className='mail__time'>10</p>
+                <p>{selectedMail?.title}</p>
+                <p className='mail__time'>{selectedMail?.time}</p>
             </div>
             <div className='mail__message'>
-            <p>thisi is amsg</p>
+            <p>{selectedMail?.desc}</p>
             </div>
             </div>
         </div>

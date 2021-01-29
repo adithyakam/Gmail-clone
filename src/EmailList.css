@@ -14,6 +14,10 @@
   padding-right: 10px;
 }
 
+.emailist::-webkit-scrollbar {
+  display: none;
+}
+
 .emaillist__sections {
   position: sticky;
   top: 0;
@@ -21,4 +25,8 @@
   border-bottom: 1px solid whitesmoke;
   border-color: white;
   z-index: 999;
+}
+
+.emaillist__list {
+  padding-bottom: 20%;
 }
