@@ -3,7 +3,7 @@
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
-    user:none
+    user:null
   },
   reducers: {
 
